@@ -17,3 +17,10 @@ class ProductPage(BasePage):
         name_book = self.browser.find_element(*ProductPageLocators.NAME_BOOK).text
         book_price = self.browser.find_element(*ProductPageLocators.BOOK_PRICE).text
         assert name_book_in_basket == name_book and price_in_basket == book_price, 'Возникла ошибка при добавлении товара в корзину'
+
+    def should_not_be_success_message(self):
+        assert self.is_not_element_present(*ProductPageLocators.MESSAGES), \
+            "Success message is presented, but should not be"
+
+    def access_message_should_disappeared(self):
+        assert self.is_disappeared(*ProductPageLocators.MESSAGES)
