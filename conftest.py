@@ -1,7 +1,5 @@
 import pytest
 from selenium import webdriver
-from selenium.webdriver.chrome.options import Options
-from selenium.common.exceptions import NoAlertPresentException # в начале файла
 
 def pytest_addoption(parser):
     parser.addoption('--browser_name', action='store', default='chrome',

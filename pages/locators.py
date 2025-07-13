@@ -24,7 +24,6 @@ class BasePageLocators():
     BASKET_LINK = (By.CSS_SELECTOR, 'span.btn-group a.btn-default')
     USER_ICON = (By.CSS_SELECTOR, ".icon-user")
 
-
 class BasketLocators():
     BASKET_ITEMS = (By.CSS_SELECTOR, '.basket-items')
     BASKET_IS_EMPTY_TEXT = (By.CSS_SELECTOR, "#content_inner p")
