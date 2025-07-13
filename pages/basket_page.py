@@ -10,9 +10,12 @@ class BasketPage(BasePage):
         super(BasketPage, self).__init__(*args, **kwargs)
 
     def basket_should_be_empty(self):
-        assert self.is_not_element_present(*BasketLocators.BASKET_ITEMS), 'basket is not empty'
-        assert self.is_element_present(*BasketLocators.BASKET_IS_EMPTY_TEXT)
         assert 'Your basket is empty' in self.browser.find_element(*BasketLocators.BASKET_IS_EMPTY_TEXT).text
+
+    def basket_should_not_content_any_items(self):
+        assert self.is_not_element_present(*BasketLocators.BASKET_ITEMS), 'basket is not empty'
+
+
 
     def should_be_basket_page(self):
         assert 'basket' in self.browser.current_url
